@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
+        </mutableArray>
+        <mutableArray key="NotoSans-Regular.ttf">
+            <string>NotoSans</string>
+            <string>NotoSans</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="devslopes_showcase_c" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +29,149 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cX-29-N1q">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In / Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oif-xB-361">
+                                        <rect key="frame" x="20" y="35" width="157" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="157" id="WuT-iV-G8u"/>
+                                            <constraint firstAttribute="height" constant="21" id="iag-tU-Qft"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="code-icon-logo" translatesAutoresizingMaskIntoConstraints="NO" id="mW6-5O-G6k">
+                                        <rect key="frame" x="547" y="28" width="33" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="33" id="HmQ-m0-6NU"/>
+                                            <constraint firstAttribute="height" constant="36" id="vGa-52-hIb"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.31764705882352939" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mW6-5O-G6k" secondAttribute="trailing" constant="20" id="RA7-9v-tNy"/>
+                                    <constraint firstItem="oif-xB-361" firstAttribute="top" secondItem="6cX-29-N1q" secondAttribute="top" constant="35" id="Tbk-CN-aab"/>
+                                    <constraint firstAttribute="height" constant="128" id="YgO-Ub-yyZ"/>
+                                    <constraint firstItem="mW6-5O-G6k" firstAttribute="top" secondItem="6cX-29-N1q" secondAttribute="top" constant="28" id="cQG-2H-a9J"/>
+                                    <constraint firstItem="oif-xB-361" firstAttribute="leading" secondItem="6cX-29-N1q" secondAttribute="leading" constant="20" id="fxe-JH-2H3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzY-GR-dLq" customClass="MaterialView" customModule="devslopes_showcase_c" customModuleProvider="target">
+                                <rect key="frame" x="20" y="74" width="560" height="128"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="01O-is-0h8">
+                                        <rect key="frame" x="20" y="10" width="520" height="108"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon" translatesAutoresizingMaskIntoConstraints="NO" id="qce-l6-pU8">
+                                                <rect key="frame" x="0.0" y="21.5" width="65" height="65"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88O-Ff-i12" customClass="MaterialButton" customModule="devslopes_showcase_c" customModuleProvider="target">
+                                                <rect key="frame" x="105" y="37.5" width="415" height="33"/>
+                                                <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                                <state key="normal" title="FACEBOOK LOGIN">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="01O-is-0h8" secondAttribute="bottom" constant="10" id="GWu-qA-8Ue"/>
+                                    <constraint firstItem="01O-is-0h8" firstAttribute="leading" secondItem="HzY-GR-dLq" secondAttribute="leading" constant="20" id="LRe-kh-1WB"/>
+                                    <constraint firstAttribute="height" constant="128" id="heE-3H-I2B"/>
+                                    <constraint firstItem="01O-is-0h8" firstAttribute="top" secondItem="HzY-GR-dLq" secondAttribute="top" constant="10" id="pH9-BI-jhD"/>
+                                    <constraint firstAttribute="trailing" secondItem="01O-is-0h8" secondAttribute="trailing" constant="20" id="sgx-bh-MRE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIp-rx-q8l" customClass="MaterialView" customModule="devslopes_showcase_c" customModuleProvider="target">
+                                <rect key="frame" x="20" y="222" width="560" height="358"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Login / Signup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rP-dC-tCL">
+                                        <rect key="frame" x="8" y="8" width="200" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="c2Z-MX-D6x"/>
+                                            <constraint firstAttribute="width" constant="200" id="m0O-XG-dgK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-z1-lCS" customClass="MaterialTextField" customModule="devslopes_showcase_c" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="104" width="532" height="35"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="ytm-tZ-mSv"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gB-Cf-rPO" customClass="MaterialTextField" customModule="devslopes_showcase_c" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="49" width="532" height="35"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="bvf-d6-d8x"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYt-jO-1Hf" customClass="MaterialButton" customModule="devslopes_showcase_c" customModuleProvider="target">
+                                        <rect key="frame" x="182" y="179" width="197" height="33"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="7Xv-6c-7tH"/>
+                                            <constraint firstAttribute="width" constant="197" id="Axc-oD-sgM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                        <state key="normal" title="Login / Signup">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5rP-dC-tCL" firstAttribute="top" secondItem="gIp-rx-q8l" secondAttribute="topMargin" id="02A-HH-48i"/>
+                                    <constraint firstItem="cYt-jO-1Hf" firstAttribute="top" secondItem="fcN-z1-lCS" secondAttribute="bottom" constant="40" id="Aum-sl-NnX"/>
+                                    <constraint firstItem="cYt-jO-1Hf" firstAttribute="centerX" secondItem="gIp-rx-q8l" secondAttribute="centerX" id="EB5-gA-z96"/>
+                                    <constraint firstAttribute="trailing" secondItem="0gB-Cf-rPO" secondAttribute="trailing" constant="20" id="WoX-5N-LG3"/>
+                                    <constraint firstItem="0gB-Cf-rPO" firstAttribute="leading" secondItem="5rP-dC-tCL" secondAttribute="leading" id="aHT-sw-3xs"/>
+                                    <constraint firstItem="5rP-dC-tCL" firstAttribute="leading" secondItem="gIp-rx-q8l" secondAttribute="leadingMargin" id="fep-bP-0cs"/>
+                                    <constraint firstItem="fcN-z1-lCS" firstAttribute="top" secondItem="0gB-Cf-rPO" secondAttribute="bottom" constant="20" id="hY8-UY-nw1"/>
+                                    <constraint firstAttribute="trailing" secondItem="fcN-z1-lCS" secondAttribute="trailing" constant="20" id="hdl-xQ-ubJ"/>
+                                    <constraint firstItem="fcN-z1-lCS" firstAttribute="leading" secondItem="0gB-Cf-rPO" secondAttribute="leading" id="ieo-NQ-Crs"/>
+                                    <constraint firstItem="0gB-Cf-rPO" firstAttribute="top" secondItem="5rP-dC-tCL" secondAttribute="bottom" constant="20" id="w2h-JN-2Ul"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="HzY-GR-dLq" secondAttribute="trailing" id="5AZ-Pr-pi2"/>
+                            <constraint firstItem="HzY-GR-dLq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Hb-Wm-1Qe"/>
+                            <constraint firstItem="6cX-29-N1q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="924-uy-RhN"/>
+                            <constraint firstAttribute="trailing" secondItem="6cX-29-N1q" secondAttribute="trailing" id="9Tl-Qe-cew"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gIp-rx-q8l" secondAttribute="bottom" constant="20" id="P6A-BE-bRD"/>
+                            <constraint firstItem="gIp-rx-q8l" firstAttribute="top" secondItem="HzY-GR-dLq" secondAttribute="bottom" constant="20" id="WLY-AP-xYW"/>
+                            <constraint firstItem="6cX-29-N1q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="X8d-1W-mcy"/>
+                            <constraint firstItem="gIp-rx-q8l" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hH6-4r-Uf2"/>
+                            <constraint firstItem="HzY-GR-dLq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="wYQ-9B-VUE"/>
+                            <constraint firstItem="gIp-rx-q8l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ybl-Nz-lsd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="460" y="455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="code-icon-logo" width="318" height="281"/>
+        <image name="fb-icon" width="65" height="65"/>
+    </resources>
 </document>
