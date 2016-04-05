@@ -23,6 +23,8 @@
 		0EEA786A1CB318D30024E77B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEA78671CB318D30024E77B /* Bolts.framework */; };
 		0EEA786B1CB318D40024E77B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEA78681CB318D30024E77B /* FBSDKCoreKit.framework */; };
 		0EEA786C1CB318D40024E77B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEA78691CB318D30024E77B /* FBSDKLoginKit.framework */; };
+		0EEA786F1CB455C10024E77B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA786E1CB455C10024E77B /* DataService.swift */; };
+		1661ABCDD78716F70DC36C21 /* Pods_devslopes_showcase_c.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2759DF8132A2DA7BAC8C020 /* Pods_devslopes_showcase_c.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		0EEA78671CB318D30024E77B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		0EEA78681CB318D30024E77B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		0EEA78691CB318D30024E77B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		0EEA786E1CB455C10024E77B /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		5051DE734DF54CD90CF5BE13 /* Pods-devslopes-showcase-c.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes-showcase-c.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes-showcase-c/Pods-devslopes-showcase-c.debug.xcconfig"; sourceTree = "<group>"; };
+		C2759DF8132A2DA7BAC8C020 /* Pods_devslopes_showcase_c.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devslopes_showcase_c.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA322EB8A0BD054E01CA37C2 /* Pods-devslopes-showcase-c.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes-showcase-c.release.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes-showcase-c/Pods-devslopes-showcase-c.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 				0EEA786A1CB318D30024E77B /* Bolts.framework in Frameworks */,
 				0EEA786B1CB318D40024E77B /* FBSDKCoreKit.framework in Frameworks */,
 				0EEA786C1CB318D40024E77B /* FBSDKLoginKit.framework in Frameworks */,
+				1661ABCDD78716F70DC36C21 /* Pods_devslopes_showcase_c.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +72,8 @@
 			children = (
 				0E91181A1CAF40320046AF00 /* devslopes-showcase-c */,
 				0E9118191CAF40320046AF00 /* Products */,
+				8F14421D1D71EEA9F7B5F81E /* Pods */,
+				3970A7D0E3F603AEEBF9BA31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +88,7 @@
 		0E91181A1CAF40320046AF00 /* devslopes-showcase-c */ = {
 			isa = PBXGroup;
 			children = (
+				0EEA786D1CB455B10024E77B /* Services */,
 				0EEA78661CB318BC0024E77B /* Frameworks */,
 				0E91183B1CAF434F0046AF00 /* Util */,
 				0E9118301CAF405C0046AF00 /* Resources */,
@@ -148,6 +158,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0EEA786D1CB455B10024E77B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0EEA786E1CB455C10024E77B /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		3970A7D0E3F603AEEBF9BA31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2759DF8132A2DA7BAC8C020 /* Pods_devslopes_showcase_c.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F14421D1D71EEA9F7B5F81E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5051DE734DF54CD90CF5BE13 /* Pods-devslopes-showcase-c.debug.xcconfig */,
+				CA322EB8A0BD054E01CA37C2 /* Pods-devslopes-showcase-c.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E91182A1CAF40320046AF00 /* Build configuration list for PBXNativeTarget "devslopes-showcase-c" */;
 			buildPhases = (
+				9CD662DFC6A5B9C1936AEBB8 /* Check Pods Manifest.lock */,
 				0E9118141CAF40320046AF00 /* Sources */,
 				0E9118151CAF40320046AF00 /* Frameworks */,
 				0E9118161CAF40320046AF00 /* Resources */,
+				D54F9D67312CE64D8CB7EB00 /* Embed Pods Frameworks */,
+				AAE1BE11E8E7255D6458E83D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,12 +256,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9CD662DFC6A5B9C1936AEBB8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AAE1BE11E8E7255D6458E83D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-devslopes-showcase-c/Pods-devslopes-showcase-c-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D54F9D67312CE64D8CB7EB00 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-devslopes-showcase-c/Pods-devslopes-showcase-c-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0E9118141CAF40320046AF00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0E9118411CAF5F390046AF00 /* MaterialTextField.swift in Sources */,
+				0EEA786F1CB455C10024E77B /* DataService.swift in Sources */,
 				0E91183A1CAF43110046AF00 /* MaterialView.swift in Sources */,
 				0E91181E1CAF40320046AF00 /* ViewController.swift in Sources */,
 				0E91181C1CAF40320046AF00 /* AppDelegate.swift in Sources */,
@@ -275,6 +362,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -321,6 +409,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -341,8 +430,10 @@
 		};
 		0E91182B1CAF40320046AF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5051DE734DF54CD90CF5BE13 /* Pods-devslopes-showcase-c.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/devslopes-showcase-c",
@@ -356,8 +447,10 @@
 		};
 		0E91182C1CAF40320046AF00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA322EB8A0BD054E01CA37C2 /* Pods-devslopes-showcase-c.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/devslopes-showcase-c",

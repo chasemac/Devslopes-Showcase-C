@@ -67,15 +67,18 @@
                                         <rect key="frame" x="20" y="10" width="520" height="108"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon" translatesAutoresizingMaskIntoConstraints="NO" id="qce-l6-pU8">
-                                                <rect key="frame" x="0.0" y="21.5" width="65" height="65"/>
+                                                <rect key="frame" x="0.0" y="22" width="65" height="65"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88O-Ff-i12" customClass="MaterialButton" customModule="devslopes_showcase_c" customModuleProvider="target">
-                                                <rect key="frame" x="105" y="37.5" width="415" height="33"/>
+                                                <rect key="frame" x="105" y="38" width="415" height="33"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
                                                 <state key="normal" title="FACEBOOK LOGIN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="fbBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dgR-lt-TAV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -110,7 +113,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gB-Cf-rPO" customClass="MaterialTextField" customModule="devslopes_showcase_c" customModuleProvider="target">
                                         <rect key="frame" x="8" y="49" width="532" height="35"/>
@@ -120,7 +123,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYt-jO-1Hf" customClass="MaterialButton" customModule="devslopes_showcase_c" customModuleProvider="target">
                                         <rect key="frame" x="182" y="179" width="197" height="33"/>
@@ -133,6 +136,9 @@
                                         <state key="normal" title="Login / Signup">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zCq-qz-Lvu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,10 +170,33 @@
                             <constraint firstItem="gIp-rx-q8l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ybl-Nz-lsd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="0gB-Cf-rPO" id="3Fk-Zz-wpY"/>
+                        <outlet property="passwordField" destination="fcN-z1-lCS" id="DVG-bU-j0m"/>
+                        <segue destination="aUj-bx-xNV" kind="show" identifier="loggedIn" id="DGu-IL-eLG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="460" y="455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6lI-bs-sIy">
+            <objects>
+                <viewController id="aUj-bx-xNV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZQo-qc-q6Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="bJc-UR-9OB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DP8-G3-weg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.29357555629999998" green="0.57756264960000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMp-Om-sda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="455"/>
         </scene>
     </scenes>
     <resources>
