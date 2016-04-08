@@ -60,5 +60,7 @@ class PostCell: UITableViewCell {
             self.showcaseImg.hidden = true
         }
     }
+    
+
 
 }
