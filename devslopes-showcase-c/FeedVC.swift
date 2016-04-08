@@ -8,9 +8,10 @@
 
 import UIKit
 import Firebase
+import Alamofire
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var postField: MaterialTextField!
     @IBOutlet weak var imageSelectorImage: UIImageView!
@@ -47,7 +48,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     }
                 }
             }
-        
+            
             self.tableView.reloadData()
         })
     }
@@ -80,7 +81,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         } else {
             return PostCell()
         }
-
+        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -98,12 +99,87 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         imageSelectorImage.image = image
     }
-
+    
     @IBAction func selectImage(sender: UITapGestureRecognizer) {
         presentViewController(imagePicker, animated: true, completion: nil)
     }
-
-    @IBAction func makePost(sender: AnyObject) {
+    
+    
+    @IBAction func postBtnPressed(sender: AnyObject) {
+        
+        if let txt = postField.text where txt != "" {
+            
+            
+            
+            if let img = imageSelectorImage.image {
+                
+                let urlStr = IMAGESHACK_URL_BASE
+                
+                let url = NSURL(string: urlStr)!
+                
+                
+                
+                //Convert to jpeg & compress by 80%(0.2)
+                
+                let imgData = UIImageJPEGRepresentation(img, 0.2)!
+                
+                
+                
+                //Convert Imageshack API key to data format
+                
+                let keyData = "0KVZESFB1213b9c2dbc16cdd32fd778c62496da3".dataUsingEncoding(NSUTF8StringEncoding)!
+                
+                
+                
+                //Convert Json to data format
+                
+                let keyJson = "json".dataUsingEncoding(NSUTF8StringEncoding)!
+                
+                
+                
+                Alamofire.upload(.POST, url, multipartFormData: { MultipartFormData in
+                    
+                    
+                    
+                    MultipartFormData.appendBodyPart(data: keyData, name: "key")
+                    
+                    MultipartFormData.appendBodyPart(data: imgData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
+                    
+                    MultipartFormData.appendBodyPart(data: keyJson, name: "format")
+                    
+                    },
+                                 
+                                 encodingCompletion: { encodingResult in
+                                    
+                                    switch encodingResult {
+                                        
+                                    case .Success(let upload, _, _):
+                                        
+                                        upload.responseJSON { response in
+                                            
+                                            if let info = response.result.value as? Dictionary<String, AnyObject> {
+                                                
+                                                
+                                                
+                                                if let links = info["links"] as? Dictionary<String, AnyObject> {
+                                                    
+                                                    if let imgLink = links["image_link"] as? String {
+                                                        print("LINK: \(imgLink)")
+                                                        
+                                                    }
+                                                }
+                                            }
+                                            
+                                        } case .Failure(let error):
+                                            
+                                            print(error)
+                                        
+                                    }
+                                    
+                })
+                
+            }
+            
+        }
     }
-
 }
