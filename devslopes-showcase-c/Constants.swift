@@ -25,3 +25,18 @@ let STATUS_ACCOUNT_NONEXIST = -8
 
 //
 let IMAGESHACK_URL_BASE = "https://post.imageshack.us/upload_api.php"
+
+// FireBase Strings
+
+// Posts
+let FirePosts = "posts"
+
+let FireDescription = "description"
+
+let FireImgUrl = "imageUrl"
+
+let FireLikes = "likes"
+
+// Users
+
+let FireUsers = "users"

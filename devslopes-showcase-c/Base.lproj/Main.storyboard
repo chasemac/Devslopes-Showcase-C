@@ -354,6 +354,7 @@
                                         <color key="backgroundColor" red="0.85598958329999997" green="0.85598958329999997" blue="0.85598958329999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="descriptionText" destination="YXh-Or-Goa" id="Ypq-5w-6nT"/>
+                                            <outlet property="likeImage" destination="hGM-Ph-g0D" id="YE3-Zl-EGx"/>
                                             <outlet property="likesLbl" destination="bIC-G1-h5R" id="YqY-74-JST"/>
                                             <outlet property="profileImg" destination="D7B-0j-Fqt" id="D6N-KC-Hm3"/>
                                             <outlet property="showcaseImg" destination="GhG-WA-aTr" id="CSq-gH-qbB"/>
